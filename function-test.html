@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Docu List by Broadcasting Co.</title>
+
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,400italic,600,300italic,300|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+
+
+		<link href="css/owl.carousel.css" rel="stylesheet">
+		<link href="css/owl.theme.css" rel="stylesheet">
+		<link href="css/owl.transitions.css" rel="stylesheet">
+
+		<link href="css/style_list_by_tag.css" rel="stylesheet">
+
+
+
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv.min.js"></script>
+		<script src="js/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body data-spy="scroll" data-target=".main-nav">
+
+		<header class="st-navbar">
+			<nav class="navbar navbar-default navbar-fixed-top clearfix" role="navigation">
+				<div class="container"><!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sept-main-nav">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#"><img src="photos/logo3.png" alt="" class="img-responsive"></a>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse main-nav" id="sept-main-nav">
+						<ul class="nav navbar-nav navbar-right">
+							<li class="active"><a href="index.html#home">Home</a></li>
+							<li><a href="index.html#about">About</a></li>
+							<li><a href="index.html#portfolio">Portfolio</a></li>
+							<li><a href="index.html#faq-sec">QnA</a></li>
+							<li><a href="index.html#contact">Contact Us</a></li>
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</div>
+			</nav>
+		</header>
+
+
+		<section class="portfolio" id="portfolio">
+			<div class="container-fluid ">
+				<div class="row">
+					<div class="col-md-12 no-padding ">
+						<div class="section-title st-center">
+							<h3>What we have done</h3>
+							<p>Avocent deditum long</p>
+						</div>
+						<div class="filter mb40">
+							<form id="filter1">
+							<fieldset class="group">
+								<label class="btn btn-default btn-main"><input type="radio" name="filter" value="all" checked="checked">All</label>
+								<label class="btn btn-default"><input type="radio" name="filter" value="KBS">KBS 스페셜</label>
+								<label class="btn btn-default"><input type="radio" name="filter" value="SBS">SBS 스페셜</label>
+								<label class="btn btn-default"><input type="radio" name="filter" value="MBC">MBC 스페셜</label>
+                <label class="btn btn-default"><input type="radio" name="filter" value="EBS">다큐프라임</label>
+							</fieldset>
+							</form><!-- #filter -->
+
+							<form id="filter2" style="margin-top:40px">
+							<fieldset class="group">
+								<label class="btn btn-default btn-main"><input type="radio" name="filter" value="all" checked="checked">All</label>
+								<label class="btn btn-default"><input type="radio" name="filter" value="자연/생태">자연/생태</label>
+								<label class="btn btn-default"><input type="radio" name="filter" value="인류/문명">인류/문명</label>
+								<label class="btn btn-default"><input type="radio" name="filter" value="인문">인문</label>
+								<label class="btn btn-default"><input type="radio" name="filter" value="과학">과학</label>
+                <label class="btn btn-default"><input type="radio" name="filter" value="교육">교육</label>
+								<label class="btn btn-default"><input type="radio" name="filter" value="가정">가정</label>
+								<label class="btn btn-default"><input type="radio" name="filter" value="정치/사회">정치/사회</label>
+                <label class="btn btn-default"><input type="radio" name="filter" value="역사">역사</label>
+								<label class="btn btn-default"><input type="radio" name="filter" value="육아">육아</label>
+								<label class="btn btn-default"><input type="radio" name="filter" value="학교교육">학교교육</label>
+                <label class="btn btn-default"><input type="radio" name="filter" value="예술/대중문화">예술/대중문화</label>
+								<label class="btn btn-default"><input type="radio" name="filter" value="의학">의학</label>
+								<label class="btn btn-default"><input type="radio" name="filter" value="경제/경영">경제/경영</label>
+							</fieldset>
+							</form><!-- #filter -->
+
+						</div><!-- .filter .mb40 -->
+
+						<div class="grid">
+						</div>
+
+       </div>
+     </div>
+   </div>
+ </section>
+
+ <!-- function test -->
+ <script type="text/javascript">
+	 var section = document.querySelector('section.portfolio .grid');
+
+	 var requestURL = 'https://jyeeee95.github.io/finalfinalfinal.json';
+	 var request = new XMLHttpRequest();
+	 request.open('GET', requestURL);
+
+	 request.responseType = 'json';
+	 request.send();
+
+	 request.onload = function() {
+		 var superHeroes = request.response;
+		 showHeroes(superHeroes);
+		 window.setTimeout(applyGrid, 0);
+	 }
+
+	 function showHeroes(jsonObj) {
+
+	 for (var i = 0; i < 50; i++) {
+
+			 var myGroups = document.createElement("figure");
+			 myGroups.setAttribute("class", "portfolio-item ");
+			 myGroups.setAttribute("data-groups", "[\"" + jsonObj[i].tv + "\"]")
+			 myFigure.setAttribute("data-big", "[\"" + jsonObj[i].big + "\"]")
+			 myGroups.appendChild(myFigure)
+
+			 var myImg = document.createElement("img");
+			 myImg.setAttribute("src", "photos/portfolio" + (i%4+1) + ".jpg");
+			 myImg.setAttribute("alt", "");
+
+			 var myFigcaption = document.createElement('figcaption');
+			 var myH2 = document.createElement('h2');
+			 var myPara = document.createElement('p');
+
+			 myH2.textContent = jsonObj[i].epi;
+			 myPara.textContent = 'by ' + jsonObj[i].title;
+
+			 var myArticle = document.createElement("a");
+			 connecturl = "page.html?page=" + i;
+			 myArticle.setAttribute("href", connecturl);
+ 			 myArticle.setAttribute("class", "btn btn-main");
+
+			 myArticle.textContent = "View more";
+
+			 var myI = document.createElement("i");
+ 			 myI.setAttribute("class", "fa fa-link");
+
+			 myArticle.insertBefore(myI, myArticle.firstChild);
+
+			 myFigcaption.appendChild(myH2);
+			 myFigcaption.appendChild(myPara)
+			 myFigcaption.appendChild(myArticle);
+
+			 myFigure.appendChild(myImg);
+			 myFigure.appendChild(myFigcaption);
+
+			 section.appendChild(myGroups);
+		 }
+	 }
+
+ </script>
+
+
+
+   <footer class="site-footer">
+     <div class="container">
+       <div class="row">
+         <div class="col-md-12">
+           &copy; <a href="https://www.cantothemes.com">CantoThemes</a> 2015.
+           <!-- Don't Remove/Edit this. If you remove this you don't have permission to use this template. -->
+           Designed by <a href="https://www.cantothemes.com">CantoThemes</a>
+           <!-- So Please don't remove this -->
+         </div>
+       </div>
+     </div>
+   </footer>
+
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="js/jquery.min.js"></script>
+   <!-- Include all compiled plugins (below), or include individual files as needed -->
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/jquery.easing.min.js"></script>
+   <script src="js/jquery.stellar.js"></script>
+   <script src="js/jquery.appear.js"></script>
+   <script src="js/jquery.nicescroll.min.js"></script>
+   <script src="js/jquery.countTo.js"></script>
+   <script src="js/jquery.shuffle.modernizr.js"></script>
+   <script src="js/jquery.shuffle.js"></script>
+   <script src="js/owl.carousel.js"></script>
+   <script src="js/jquery.ajaxchimp.min.js"></script>
+   <script src="js/script.js"></script>
+ </body>
+</html>

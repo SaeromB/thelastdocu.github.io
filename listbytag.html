@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Docu List by Broadcasting Co.</title>
+
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,400italic,600,300italic,300|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+
+
+		<link href="css/owl.carousel.css" rel="stylesheet">
+		<link href="css/owl.theme.css" rel="stylesheet">
+		<link href="css/owl.transitions.css" rel="stylesheet">
+
+		<link href="css/style_list_by_tag.css" rel="stylesheet">
+
+
+
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv.min.js"></script>
+		<script src="js/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body data-spy="scroll" data-target=".main-nav">
+
+		<header class="st-navbar">
+			<nav class="navbar navbar-default navbar-fixed-top clearfix" role="navigation">
+				<div class="container"><!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sept-main-nav">
+							<span class="sr-only">by tag</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#"><img src="photos/logo3.png" alt="" class="img-responsive"></a>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse main-nav" id="sept-main-nav">
+						<ul class="nav navbar-nav navbar-right">
+							<li class="active"><a href="index.html#home">Home</a></li>
+							<li><a href="index.html#about">About</a></li>
+							<li><a href="index.html#portfolio">Portfolio</a></li>
+							<li><a href="index.html#faq-sec">QnA</a></li>
+							<li><a href="index.html#contact">Contact Us</a></li>
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</div>
+			</nav>
+		</header>
+
+
+		<section class="portfolio" id="portfolio">
+			<div class="container-fluid ">
+				<div class="row">
+					<div class="col-md-12 no-padding ">
+						<div class="section-title st-center">
+							<h3>Sort by Tag</h3>
+						</div>
+						<div class="filter mb40">
+							<form id="filter">
+							<fieldset class="group">
+								<label class="btn btn-default btn-main"><input type="radio" name="filter" value="all" checked="checked">All</label>
+								<label class="btn btn-default"><input type="radio" name="filter" value="KBS">KBS 스페셜</label>
+								<label class="btn btn-default"><input type="radio" name="filter" value="SBS">SBS 스페셜</label>
+								<label class="btn btn-default"><input type="radio" name="filter" value="MBC">MBC 스페셜</label>
+                <label class="btn btn-default"><input type="radio" name="filter" value="EBS">다큐프라임</label>
+							</fieldset>
+							</form><!-- #filter -->
+						</div><!-- .filter .mb40 -->
+
+						<div class="grid">
+						</div>
+
+       </div>
+     </div>
+   </div>
+ </section>
+
+
+
+	<script type="text/javascript">
+
+	</script>
+
+
+ <!-- function test -->
+ <script type="text/javascript">
+
+	 // get keyword
+	 function getUrlParams() {
+			 var params = {};
+			 var uri_dec = decodeURIComponent(window.location.search);
+
+			 uri_dec.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
+			 return params;
+	 } //end of geturlParams function
+
+	 function getkeyword(){
+		 var oParams = getUrlParams();
+		 var tag = oParams.tag;
+
+		 return tag;
+	 } //end of getkeyword function
+
+
+	 // get grid section
+	 var tag = getkeyword();
+
+	 var requestURL = 'https://jyeeee95.github.io/finalfinalfinal.json';
+	 var request = new XMLHttpRequest();
+	 request.open('GET', requestURL);
+
+	 request.responseType = 'json';
+	 request.send();
+
+	 request.onload = function() {
+		 var getdata = request.response;
+		 getgrid(getdata);
+		 gettitlename();
+	 } // end onload
+
+
+	 function gettitlename() {
+		 var section = document.querySelector('section.portfolio .section-title');
+
+		 var mytitlePara = document.createElement("p");
+		 mytitlePara.textContent = '#' + tag;
+
+		 // var section.insertBefore(mytitlePara, section2.firstChild);
+		 section.appendChild(mytitlePara);
+	 } // end of gettitlename function
+
+	 function getgrid(jsonObj) {
+		 var imgurl = ['//img2.sbs.co.kr/img/sbs_cms/SR/2018/09/10/SR57990984_w640_h360.jpg',
+			'http://static.ebs.co.kr/images/bhp/docuprime/images/2018/08/21/13/27/40/4de604d1-3314-4b67-a569-71fe07367064.jpg',
+			'http://static.ebs.co.kr/images/bhp/docuprime/images/2018/08/8/9/46/57/acb08ac2-0947-4206-b6e2-14fe7b2542f8.jpg',
+			'http://static.ebs.co.kr/images/bhp/docuprime/images/2017/12/27/17/7/9/5fac5c8e-3089-4ec4-bf96-73cdb8942480.PNG',
+		 	'http://static.ebs.co.kr/images/bhp/docuprime/images/2017/09/22/18/48/16/a48b4e66-e8f7-4cd9-81c3-5f4520833e7c.jpg',
+			'http://static.ebs.co.kr/images/bhp/docuprime/images/2013/12/5/14/4/54/55cb6e9c-8d6f-4bdb-a6a7-024824bb61c0.PNG',
+			'//img2.sbs.co.kr/img/sbs_cms/SR/2018/06/20/SR58283662_w640_h360.JPG',
+			'//img2.sbs.co.kr/img/sbs_cms/SR/2016/05/30/SR59845754_w640_h360.jpg',
+			'http://static.ebs.co.kr/images/bhp/docuprime/images/2018/05/21/10/17/5/26085c9b-4065-4977-9c3a-5d4e2f783483.PNG',
+			'http://static.ebs.co.kr/images/bhp/docuprime/images/2018/06/15/13/28/5/533a8597-cf5b-46d3-8cc4-7a6a57e41b3c.jpg',
+			'http://static.ebs.co.kr/images/bhp/docuprime/images/2018/05/24/17/31/30/9937169a-d8a5-41ac-9688-4ec4f46c10d0.PNG',
+			'http://static.ebs.co.kr/images/bhp/docuprime/images/2014/08/12/16/20/47/fde954a0-7bbb-4d59-a3a2-a691cf053a42.PNG',
+			'http://static.ebs.co.kr/images/bhp/docuprime/images/2014/06/11/16/28/39/bc674cf6-901b-442c-84a9-323ead6d92bd.PNG',
+			'https://img2.sbs.co.kr/img/seditor/VD/2018/09/28/VD64066299_w640.jpg',
+			'http://img2.sbs.co.kr/img/sbs_cms/PG/2015/07/02/PG78099443_w640_h360.JPG',
+			'http://img2.sbs.co.kr/img/sbs_cms/SR/2016/03/21/SR73144389_w640_h360.jpg'
+			]
+
+		 var section = document.querySelector('section.portfolio .grid');
+
+		 for (var i = 0; i < jsonObj.length; i++) {
+			 var keyarray = jsonObj[i].vod_key.replace("[", "").replace("]","").replace(/'/g, "").replace(/ /g,"");
+			 var vod_key = keyarray.split(',');
+
+			 if (vod_key.length < 1) {
+			 } else{
+				 for (var j = 0; j < vod_key.length; j++) {
+
+				 	if (vod_key[j] === tag) {
+
+					 var myFigure = document.createElement("figure");
+					 myFigure.setAttribute("class", "portfolio-item");
+					 myFigure.setAttribute("data-groups", "[\"" + jsonObj[i].tv + "\"]")
+
+					 var myImg = document.createElement("img");
+					 myImg.setAttribute("src", imgurl[i%14]);
+					 myImg.setAttribute("alt", "");
+
+					 var myFigcaption = document.createElement('figcaption');
+					 var myH2 = document.createElement('h2');
+					 var myPara = document.createElement('p');
+
+					 myH2.textContent = jsonObj[i].epi;
+					 myPara.textContent = 'by ' + jsonObj[i].title;
+
+					 var myArticle = document.createElement("a");
+					 connecturl = "page.html?page=" + i
+		 			 myArticle.setAttribute("href", connecturl);
+		 			 myArticle.setAttribute("class", "btn btn-main");
+
+					 myArticle.textContent = "View more";
+
+					 var myI = document.createElement("i");
+		 			 myI.setAttribute("class", "fa fa-link");
+
+					 myArticle.insertBefore(myI, myArticle.firstChild);
+
+					 myFigcaption.appendChild(myH2);
+					 myFigcaption.appendChild(myPara)
+					 myFigcaption.appendChild(myArticle);
+
+					 myFigure.appendChild(myImg);
+					 myFigure.appendChild(myFigcaption);
+
+					 section.appendChild(myFigure);
+
+
+				 } //end of if
+			 } //end of for j
+		 } //end of isnan
+		 } //end of for i
+	 } //end of getgrid function
+
+ </script>
+
+
+   <footer class="site-footer">
+     <div class="container">
+       <div class="row">
+         <div class="col-md-12">
+           &copy; <a href="https://www.cantothemes.com">CantoThemes</a> 2015.
+           <!-- Don't Remove/Edit this. If you remove this you don't have permission to use this template. -->
+           Designed by <a href="https://www.cantothemes.com">CantoThemes</a>
+           <!-- So Please don't remove this -->
+         </div>
+       </div>
+     </div>
+   </footer>
+
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="js/jquery.min.js"></script>
+   <!-- Include all compiled plugins (below), or include individual files as needed -->
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/jquery.easing.min.js"></script>
+   <script src="js/jquery.stellar.js"></script>
+   <script src="js/jquery.appear.js"></script>
+   <script src="js/jquery.nicescroll.min.js"></script>
+   <script src="js/jquery.countTo.js"></script>
+   <script src="js/jquery.shuffle.modernizr.js"></script>
+   <script src="js/jquery.shuffle.js"></script>
+   <script src="js/owl.carousel.js"></script>
+   <script src="js/jquery.ajaxchimp.min.js"></script>
+   <script src="js/script.js"></script>
+ </body>
+</html>
