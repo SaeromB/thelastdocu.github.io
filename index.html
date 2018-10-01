@@ -392,13 +392,6 @@
 
 
 	 	 function getgrid(jsonObj) {
-			 var imgurl = ['//img2.sbs.co.kr/img/sbs_cms/SR/2018/09/10/SR57990984_w640_h360.jpg',
-			 	'http://static.ebs.co.kr/images/bhp/docuprime/images/2018/08/21/13/27/40/4de604d1-3314-4b67-a569-71fe07367064.jpg',
-			 	'http://static.ebs.co.kr/images/bhp/docuprime/images/2018/08/8/9/46/57/acb08ac2-0947-4206-b6e2-14fe7b2542f8.jpg',
-				'http://static.ebs.co.kr/images/bhp/docuprime/images/2017/12/11/14/49/29/b7629a34-86cf-4a73-a74a-72d17f2bea30.jpg',
-				'http://static.ebs.co.kr/images/bhp/docuprime/images/2018/02/26/16/33/3/34a4d290-b189-4cf6-8f4a-1ad14ee75aa4.PNG',
-				'//img2.sbs.co.kr/img/sbs_cms/SR/2018/09/17/SR91515363_w640_h360.jpg',]
-
 
 	 		 var section = document.querySelector('section.portfolio .grid');
 			 var enddata = jsonObj[jsonObj.length-1].id;
@@ -411,7 +404,7 @@
 				 myFigure.setAttribute("data-groups", "[\"" + jsonObj[i].tv + "\"]")
 
 				 var myImg = document.createElement("img");
-				 myImg.setAttribute("src", imgurl[i%6]);
+				 myImg.setAttribute("src", "photos/portfolio" + (i%4+1) + ".jpg");
 				 myImg.setAttribute("alt", "");
 
 				 var myFigcaption = document.createElement('figcaption');

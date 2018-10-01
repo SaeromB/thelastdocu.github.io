@@ -140,24 +140,6 @@
 	 } // end of gettitlename function
 
 	 function getgrid(jsonObj) {
-		 var imgurl = ['//img2.sbs.co.kr/img/sbs_cms/SR/2018/09/10/SR57990984_w640_h360.jpg',
-			'http://static.ebs.co.kr/images/bhp/docuprime/images/2018/08/21/13/27/40/4de604d1-3314-4b67-a569-71fe07367064.jpg',
-			'http://static.ebs.co.kr/images/bhp/docuprime/images/2018/08/8/9/46/57/acb08ac2-0947-4206-b6e2-14fe7b2542f8.jpg',
-			'http://static.ebs.co.kr/images/bhp/docuprime/images/2017/12/27/17/7/9/5fac5c8e-3089-4ec4-bf96-73cdb8942480.PNG',
-		 	'http://static.ebs.co.kr/images/bhp/docuprime/images/2017/09/22/18/48/16/a48b4e66-e8f7-4cd9-81c3-5f4520833e7c.jpg',
-			'http://static.ebs.co.kr/images/bhp/docuprime/images/2013/12/5/14/4/54/55cb6e9c-8d6f-4bdb-a6a7-024824bb61c0.PNG',
-			'//img2.sbs.co.kr/img/sbs_cms/SR/2018/06/20/SR58283662_w640_h360.JPG',
-			'//img2.sbs.co.kr/img/sbs_cms/SR/2016/05/30/SR59845754_w640_h360.jpg',
-			'http://static.ebs.co.kr/images/bhp/docuprime/images/2018/05/21/10/17/5/26085c9b-4065-4977-9c3a-5d4e2f783483.PNG',
-			'http://static.ebs.co.kr/images/bhp/docuprime/images/2018/06/15/13/28/5/533a8597-cf5b-46d3-8cc4-7a6a57e41b3c.jpg',
-			'http://static.ebs.co.kr/images/bhp/docuprime/images/2018/05/24/17/31/30/9937169a-d8a5-41ac-9688-4ec4f46c10d0.PNG',
-			'http://static.ebs.co.kr/images/bhp/docuprime/images/2014/08/12/16/20/47/fde954a0-7bbb-4d59-a3a2-a691cf053a42.PNG',
-			'http://static.ebs.co.kr/images/bhp/docuprime/images/2014/06/11/16/28/39/bc674cf6-901b-442c-84a9-323ead6d92bd.PNG',
-			'https://img2.sbs.co.kr/img/seditor/VD/2018/09/28/VD64066299_w640.jpg',
-			'http://img2.sbs.co.kr/img/sbs_cms/PG/2015/07/02/PG78099443_w640_h360.JPG',
-			'http://img2.sbs.co.kr/img/sbs_cms/SR/2016/03/21/SR73144389_w640_h360.jpg'
-			]
-
 		 var section = document.querySelector('section.portfolio .grid');
 
 		 for (var i = 0; i < jsonObj.length; i++) {
@@ -172,7 +154,7 @@
 
 					 var myFigure = document.createElement("figure");
 					 myFigure.setAttribute("class", "portfolio-item");
-					 myFigure.setAttribute("data-groups", "[\"" + jsonObj[i].tv + "\"]")
+					 myFigure.setAttribute("data-groups", "photos/portfolio" + (i%4+1) + ".jpg");
 
 					 var myImg = document.createElement("img");
 					 myImg.setAttribute("src", imgurl[i%14]);
