@@ -67,16 +67,6 @@
 							<p>Avocent deditum long</p>
 						</div>
 						<div class="filter mb40">
-							<form id="filter1">
-							<fieldset class="group">
-								<label class="btn btn-default btn-main"><input type="radio" name="filter" value="all" checked="checked">All</label>
-								<label class="btn btn-default"><input type="radio" name="filter" value="KBS">KBS 스페셜</label>
-								<label class="btn btn-default"><input type="radio" name="filter" value="SBS">SBS 스페셜</label>
-								<label class="btn btn-default"><input type="radio" name="filter" value="MBC">MBC 스페셜</label>
-                <label class="btn btn-default"><input type="radio" name="filter" value="EBS">다큐프라임</label>
-							</fieldset>
-							</form><!-- #filter -->
-
 							<form id="filter2" style="margin-top:40px">
 							<fieldset class="group">
 								<label class="btn btn-default btn-main"><input type="radio" name="filter" value="all" checked="checked">All</label>
@@ -129,8 +119,7 @@
 
 			 var myGroups = document.createElement("figure");
 			 myGroups.setAttribute("class", "portfolio-item ");
-			 myGroups.setAttribute("data-groups", "[\"" + jsonObj[i].tv + "\"]")
-			 myFigure.setAttribute("data-big", "[\"" + jsonObj[i].big + "\"]")
+			 myGroups.setAttribute("data-groups", "[\"" + jsonObj[i].big + "\"]")
 			 myGroups.appendChild(myFigure)
 
 			 var myImg = document.createElement("img");
