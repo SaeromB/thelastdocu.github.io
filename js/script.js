@@ -115,9 +115,9 @@ $(function () {
 
     function mcCallback (res) {
 		if(res.result === 'success') {
-			$('.subscribe-result').html('<i class="pe-7s-check"></i>' + res.msg).delay(500).slideDown(1000).delay(10000).slideUp(1000);
+			$('.subscribe-result').html('<i class="pe-7s-check"></i>' + res.msg).delay(500).slideDown(1000).delay(25000).slideUp(1000);
 		}else if(res.result === 'error'){
-			$('.subscribe-result').html('<i class="pe-7s-close-circle"></i>' + res.msg).delay(500).slideDown(1000).delay(10000).slideUp(1000);
+			$('.subscribe-result').html('<i class="pe-7s-close-circle"></i>' + res.msg).delay(500).slideDown(1000).delay(25000).slideUp(1000);
 		}
 	}
 
@@ -199,7 +199,7 @@ $(function () {
 });
 
 
-$(window).load(function () {
+function applyGrid() {
 	var $grid = $('.grid'),
 		$sizer = $grid.find('.shuffle__sizer'),
 		$filterType = $('#filter input[name="filter"]');
@@ -217,42 +217,4 @@ $(window).load(function () {
 		$('label.btn-main').removeClass('btn-main');
 		$('input[name="filter"]:checked').parent().addClass('btn-main');
 	});
-});
-
-
-
-
-// $.ajax({
-//     url: 'crawling_finalsample_dahyun.csv',
-//     dataType: 'text',
-//   }).done(successFunction);
-//
-//
-// function successFunction(data) {
-//   var allRows = data.split(/\r?\n|\r/);
-//   var table = '';
-//   for (var singleRow = 0; singleRow < 10; singleRow++) {
-//     var rowCells = allRows[singleRow].split(',');
-//     for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
-//       if (singleRow === 0) {
-//         table += '<th>';
-//         table += rowCells[rowCell];
-//         table += '</th>';
-//       } else {
-//         table += '<td>';
-//         table += rowCells[rowCell];
-//         table += '</td>';
-//       }
-//     }
-//     if (singleRow === 0) {
-//       table += '</tr>';
-//       table += '</thead>';
-//       table += '<tbody>';
-//     } else {
-//       table += '</tr>';
-//     }
-//   }
-//   table += '</tbody>';
-//   table += '</table>';
-//   $('body section#portfolio div').append(table);
-// }
+}

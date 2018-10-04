@@ -6,7 +6,7 @@
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>Sept - StratUp Landing Page</title>
+            <title>The Last Docu::Docu info</title>
 
             <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,400italic,600,300italic,300|Oswald:400,300,700' rel='stylesheet' type='text/css'>
             <!-- Bootstrap -->
@@ -32,7 +32,7 @@
         </head>
         <body data-spy="scroll" data-target=".main-nav">
 
-            <header class="st-navbar">
+            <header class="st-navbar st-navbar-mini">
                 <nav class="navbar navbar-default navbar-fixed-top clearfix" role="navigation">
                     <div class="container"><!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
@@ -46,15 +46,16 @@
                         </div>
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse main-nav" id="sept-main-nav">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="active"><a href="index.html#home">Home</a></li>
-                                <li><a href="index.html#about">About</a></li>
-                                <li><a href="index.html#portfolio">Portfolio</a></li>
-                                <li><a href="index.html#faq-sec">QnA</a></li>
-                                <li><a href="index.html#contact">Contact Us</a></li>
-                            </ul>
-                        </div><!-- /.navbar-collapse -->
+              					<div class="collapse navbar-collapse main-nav" id="sept-main-nav">
+              						<ul class="nav navbar-nav navbar-right">
+              							<li><a href="index.html#home">Home</a></li>
+              							<li><a href="index.html#about">About</a></li>
+              							<li><a href="index.html#search">Search</a></li>
+              							<li class="active"><a href="index.html#portfolio">Docu</a></li>
+              							<li><a href="index.html#testimonials">MacNGrmaS</a></li>
+              							<li><a href="index.html#faq-sec">Instruction</a></li>
+              						</ul>
+              					</div><!-- /.navbar-collapse -->
                     </div>
                 </nav>
             </header>
@@ -83,8 +84,12 @@
                         <h3><i class="fa fa-question-circle"></i> #Hashtag </h3>
                         </div>
 
-                        <div class="synop">
-                        <h3><i class="fa fa-question-circle"></i> Synopsis </h3>
+                        <div class="Recommend">
+                        <h3><i class="fa fa-question-circle"></i> Recommended Docu </h3>
+
+                        <div class="grid">
+          							</div>
+
                         </div>
 
 
@@ -119,56 +124,37 @@
                page.replace(/'/g, "");
                page *= 1;
 
-             	 var requestURL = 'https://jyeeee95.github.io/finalfinalfinal.json';
-             	 var request = new XMLHttpRequest();
-             	 request.open('GET', requestURL);
 
-             	 request.responseType = 'json';
-             	 request.send();
+            	 var requestURL = 'https://jyeeee95.github.io/finalfinalfinal.json';
+            	 var request = new XMLHttpRequest();
+            	 request.open('GET', requestURL);
 
-             	 request.onload = function() {
-             		 var getdata = request.response;
+            	 request.responseType = 'json';
+            	 request.send();
+
+            	 request.onload = function() {
+            		 getdata = request.response;
+            		 // getgrid(getdata);
+            		 // window.setTimeout(applyGrid, 50);
                  gettitlename(getdata);
-                 getsynop(getdata);
              		 gettag(getdata);
-
-             	 } // end onload
+            	 }
 
 
              	 function gettitlename(jsonObj) {
+                 var html = [];
+                 var section = document.querySelector('section.faq-sec .section-title');
                  var pageset = jsonObj[page];
 
-             		 var section = document.querySelector('section.faq-sec .section-title');
+                 html.push("<h3>" + pageset.title + " / " + pageset.dates +"</h3></p>");
+                 html.push("<p>" + pageset.epi + "</p>")
+                 html.push("<a href = \"" + pageset.links + "\" class = \"btn btn-main btn-lg\">바로가기</a>");
 
-             		 var mytitle = document.createElement("h3");
-                 var mydates = document.createElement("h3");
-             		 mytitle.textContent = 'by ' + pageset.title;
-             		 mydates.textContent = pageset.dates;
+                 var temphtml = html.join('');
+                 temphtml.replace(/>,</gi, /> </);
 
-                 var myepi = document.createElement("p");
-             		 myepi.textContent = pageset.epi;
-
-                 var mylink = document.createElement("a");
-                 mylink.setAttribute("href", pageset.links);
-                 mylink.setAttribute("class", "btn btn-main btn-lg")
-             		 mylink.textContent = "바로가기";
-
-                 section.appendChild(mytitle);
-                 section.appendChild(mydates);
-                 section.appendChild(myepi);
-                 section.appendChild(mylink);
+                 section.innerHTML = temphtml;
              	 } // end of gettitlename function
-
-
-             	 function getsynop(jsonObj) {
-                 var pageset = jsonObj[page]
-             		 var section = document.querySelector('section.faq-sec .synop');
-
-                 var mysynop = document.createElement("p");
-                 mysynop.textContent = pageset.synop;
-
-                 section.appendChild(mysynop);
-               }
 
 
                function gettag(jsonObj) {
@@ -202,4 +188,72 @@
 
              	 } //end of gettag function
 
+
+               var requestURL_reco = 'https://jyeeee95.github.io/recommendation_result.json';
+            	 var request_reco = new XMLHttpRequest();
+            	 request_reco.open('GET', requestURL_reco);
+
+            	 request_reco.responseType = 'json';
+            	 request_reco.send();
+
+            	 request_reco.onload = function() {
+            		 var recodata = request_reco.response;
+            		 getgrid(recodata);
+            		 window.setTimeout(applyGrid, 50);
+            	 }
+
+             	 function getgrid(jsonObj) {
+                   alert(jsonObj);
+                   var forreco = jsonObj[page];
+
+                   var recoarray = forreco.reco.replace("[", "").replace("]","").replace(/'/g, "").replace(/ /g,"");
+                   var reco_list = keyarray.split(',');
+
+             		   var n = reco_list.length;
+             		   var section = document.querySelector('.grid');
+                   var nTop = jsonObj.slice(0, n);
+
+             			 var html = [];
+
+             			 nTop.forEach(function(data) {
+
+             				 html.push("<figure class='portfolio-item' data-groups=\'[\"" + getdata.tv + "\"]\'>");
+             				 html.push("<img src = \"photos/portfolio" + (getdata.id % 4 + 1) + ".jpg\" alt>");
+             				 html.push("<figcaption>");
+             				 html.push("<h2>" + getdata.epi + "</h2>");
+             				 html.push("<p><span> " + getdata.title + "</span> with "+ getdata.tv + "</p>");
+             				 var connecturl = "page.html?page=" + (getdata.id - 1);
+             				 html.push("<a href=" + connecturl + " class=\"btn btn-main\">");
+             				 html.push("<i class=\"fa fa-link\"></i>View more</a>");
+             				 html.push("</figcaption>");
+             				 html.push("</figure>");
+
+             			 });
+
+             			 var temphtml = html.join('');
+             			 temphtml.replace(/>,</gi, /> </);
+
+             			 section.innerHTML = temphtml;
+             		 }
+
+
+
+
               </script>
+
+              <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+              <script src="js/jquery.min.js"></script>
+              <!-- Include all compiled plugins (below), or include individual files as needed -->
+              <script src="js/bootstrap.min.js"></script>
+              <script src="js/jquery.easing.min.js"></script>
+              <script src="js/jquery.stellar.js"></script>
+              <script src="js/jquery.appear.js"></script>
+              <script src="js/jquery.nicescroll.min.js"></script>
+              <script src="js/jquery.countTo.js"></script>
+              <script src="js/jquery.shuffle.modernizr.js"></script>
+              <script src="js/jquery.shuffle.js"></script>
+              <script src="js/owl.carousel.js"></script>
+              <script src="js/jquery.ajaxchimp.min.js"></script>
+              <script src="js/script_stop.js"></script>
+            </body>
+           </html>

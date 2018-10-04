@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Docu List by Broadcasting Co.</title>
+		<title>The Last Docu::by company</title>
 
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,400italic,600,300italic,300|Oswald:400,300,700' rel='stylesheet' type='text/css'>
 		<!-- Bootstrap -->
@@ -30,8 +30,8 @@
 	</head>
 	<body data-spy="scroll" data-target=".main-nav">
 
-		<header class="st-navbar">
-			<nav class="navbar navbar-default navbar-fixed-top clearfix" role="navigation">
+		<header class="st-navbar navbar-default st-navbar-mini">
+			<nav class="navbar st-navbar-mini navbar-default navbar-fixed-top clearfix" role="navigation">
 				<div class="container"><!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sept-main-nav">
@@ -46,11 +46,12 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse main-nav" id="sept-main-nav">
 						<ul class="nav navbar-nav navbar-right">
-							<li class="active"><a href="index.html#home">Home</a></li>
+							<li><a href="index.html#home">Home</a></li>
 							<li><a href="index.html#about">About</a></li>
-							<li><a href="index.html#portfolio">Portfolio</a></li>
-							<li><a href="index.html#faq-sec">QnA</a></li>
-							<li><a href="index.html#contact">Contact Us</a></li>
+							<li><a href="index.html#search">Search</a></li>
+							<li class="active"><a href="index.html#portfolio">Docu</a></li>
+							<li><a href="index.html#testimonials">MacNGrmaS</a></li>
+							<li><a href="index.html#faq-sec">Instruction</a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</div>
@@ -89,7 +90,6 @@
 
  <!-- function test -->
  <script type="text/javascript">
-	 var section = document.querySelector('section.portfolio .grid');
 
 	 var requestURL = 'https://jyeeee95.github.io/finalfinalfinal.json';
 	 var request = new XMLHttpRequest();
@@ -99,53 +99,38 @@
 	 request.send();
 
 	 request.onload = function() {
-		 var superHeroes = request.response;
-		 showHeroes(superHeroes);
-		 window.setTimeout(applyGrid, 0);
+		 var getdata = request.response;
+		 getgrid(getdata);
+		 window.setTimeout(applyGrid, 50);
 	 }
 
-	 function showHeroes(jsonObj) {
+	 function getgrid(jsonObj) {
+		   var n = 100;
+		   var section = document.querySelector('section.portfolio .grid');
+       var nTop = jsonObj.reverse().slice(0, n);
 
-	 for (var i = 0; i < 50; i++) {
+			 var html = [];
 
-			 var myGroups = document.createElement("figure");
-			 myGroups.setAttribute("class", "portfolio-item ");
-			 myGroups.setAttribute("data-groups", "[\"" + jsonObj[i].tv + "\"]")
-			 myGroups.appendChild(myFigure)
+			 nTop.forEach(function(data) {
 
-			 var myImg = document.createElement("img");
-			 myImg.setAttribute("src", "photos/portfolio" + (i%4+1) + ".jpg");
-			 myImg.setAttribute("alt", "");
+				 html.push("<figure class='portfolio-item' data-groups=\'[\"" + data.tv + "\"]\'>");
+				 html.push("<img src = \"photos/portfolio" + (data.id % 4 + 1) + ".jpg\" alt>");
+				 html.push("<figcaption>");
+				 html.push("<h2>" + data.epi + "</h2>");
+				 html.push("<p><span> " + data.title + "</span> with "+ data.tv + "</p>");
+				 var connecturl = "page.html?page=" + (data.id - 1);
+				 html.push("<a href=" + connecturl + " class=\"btn btn-main\">");
+				 html.push("<i class=\"fa fa-link\"></i>View more</a>");
+				 html.push("</figcaption>");
+				 html.push("</figure>");
 
-			 var myFigcaption = document.createElement('figcaption');
-			 var myH2 = document.createElement('h2');
-			 var myPara = document.createElement('p');
+			 });
 
-			 myH2.textContent = jsonObj[i].epi;
-			 myPara.textContent = 'by ' + jsonObj[i].title;
+			 var temphtml = html.join('');
+			 temphtml.replace(/>,</gi, /> </);
 
-			 var myArticle = document.createElement("a");
-			 connecturl = "page.html?page=" + i;
-			 myArticle.setAttribute("href", connecturl);
- 			 myArticle.setAttribute("class", "btn btn-main");
-
-			 myArticle.textContent = "View more";
-
-			 var myI = document.createElement("i");
- 			 myI.setAttribute("class", "fa fa-link");
-
-			 myArticle.insertBefore(myI, myArticle.firstChild);
-
-			 myFigcaption.appendChild(myH2);
-			 myFigcaption.appendChild(myPara)
-			 myFigcaption.appendChild(myArticle);
-
-			 myFigure.appendChild(myImg);
-			 myFigure.appendChild(myFigcaption);
-
-			 section.appendChild(myGroups);
+			 section.innerHTML = temphtml;
 		 }
-	 }
 
  </script>
 
@@ -177,6 +162,6 @@
    <script src="js/jquery.shuffle.js"></script>
    <script src="js/owl.carousel.js"></script>
    <script src="js/jquery.ajaxchimp.min.js"></script>
-   <script src="js/script.js"></script>
+   <script src="js/script_stop.js"></script>
  </body>
 </html>

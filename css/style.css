@@ -8,20 +8,22 @@
  * -------------------------------------------------------------------
  * This theme under "Attribution-NonCommercial CC BY-NC". You can't remove footer credit link.
  */
+
 body {
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   color: #808080;
   font-weight: 400;
   font-size: 14px;
   line-height: 26px;
   word-spacing: 2px;
+  word-wrap: keep-all;
   -webkit-font-smoothing: antialiased;
 }
 p {
   margin-bottom: 26px;
 }
 a {
-  color: #4ecdc4;
+  color: #FECB2F;
   text-decoration: none !important;
   -webkit-transition: color 0.3s;
           transition: color 0.3s;
@@ -44,11 +46,13 @@ h6 {
   border-radius: 2px !important;
   padding: 15px 20px !important;
   height: auto;
-  border-color: #e5e5e5 !important;
+  border-color: #
+
+   !important;
   box-shadow: none !important;
 }
 .form-control:focus {
-  border-color: #4ecdc4 !important;
+  border-color: #FECB2F !important;
 }
 .mb250 {
   margin-bottom: 250px !important;
@@ -247,8 +251,8 @@ h6 {
 }
 .btn-default:hover {
   color: #fff;
-  background-color: #4ecdc4;
-  border-color: #4ecdc4;
+  background-color: #FECB2F;
+  border-color: #FECB2F;
 }
 .btn-default-o {
   color: #f2f2f2;
@@ -256,19 +260,19 @@ h6 {
   background-color: transparent;
 }
 .btn-default-o:hover {
-  color: #4ecdc4;
+  color: #FECB2F;
   background-color: #fff;
   border-color: #fff;
 }
 .btn-main-o {
-  color: #4ecdc4;
-  border-color: #4ecdc4;
+  color: #FECB2F;
+  border-color: #FECB2F;
   background-color: transparent;
 }
 .btn-main-o:hover {
   color: #fff;
-  background-color: #4ecdc4;
-  border-color: #4ecdc4;
+  background-color: #FECB2F;
+  border-color: #FECB2F;
 }
 .btn-dark-o {
   color: #4c4c4c;
@@ -294,19 +298,19 @@ h6 {
 }
 .btn-main {
   color: #fff;
-  background-color: #4ecdc4;
-  border-color: #4ecdc4;
+  background-color: #FECB2F;
+  border-color: #FECB2F;
 }
 .btn-main:hover,
 .btn-main:focus,
 .btn-main:active {
-  background-color: #33b5ac;
-  border-color: #33b5ac;
+  background-color: #FECB2F;
+  border-color: #FECB2F;
   color: #fff;
 }
 .btn-link {
   font-weight: 400;
-  color: #4ecdc4;
+  color: #FECB2F;
 }
 .btn-link:hover,
 .btn-link:focus,
@@ -335,7 +339,7 @@ h6 {
 .section-title p {
   font-family: "Oswald";
   text-transform: uppercase;
-  color: #4ecdc4;
+  color: #FECB2F;
   font-size: 38px;
   line-height: 58px;
   font-weight: 700;
@@ -354,6 +358,8 @@ h6 {
   width: 150px;
   height: 51px;
   background-image: url(../images/title-top.png);
+  background-size: contain;
+  background-position:center center;
   background-repeat: no-repeat;
 }
 .bottom-line {
@@ -364,7 +370,7 @@ h6 {
   display: block;
   width: 50px;
   height: 2px;
-  background-color: #4ecdc4;
+  background-color: #FECB2F;
   margin-top: 5px;
 }
 .tooltip.top .tooltip-arrow {
@@ -382,7 +388,7 @@ h6 {
   opacity: 1 !important;
 }
 .nicescroll-rails > div {
-  background: #4ecdc4 !important;
+  background: #FECB2F !important;
 }
 /* ---------------------------------------------- /*
  * Mouse animate icon
@@ -487,7 +493,7 @@ h6 {
   text-transform: uppercase;
   font-size: 70px;
   line-height: 85px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 8px;
   word-spacing: 4px;
   margin-bottom: 15px;
@@ -528,7 +534,7 @@ h6 {
   margin-top: 80px;
 }
 .st-highlight {
-  color: #4ecdc4;
+  color: #FECB2F;
 }
 .navbar-default {
   background-color: transparent;
@@ -579,14 +585,14 @@ h6 {
 .navbar-nav > li > a:hover,
 .navbar-nav > li > a:focus,
 .navbar-nav > li > a:active {
-  color: #4ecdc4;
+  color: #FECB2F;
   outline-width: 0;
 }
 .navbar-nav > li.active > a,
 .navbar-nav > li.active a:hover,
 .navbar-nav > li.active a:focus,
 .navbar-nav > li.active a:active {
-  color: #4ecdc4;
+  color: #FECB2F;
 }
 .navbar-default .navbar-nav > li > a {
   color: #fff;
@@ -595,12 +601,12 @@ h6 {
 .navbar-default .navbar-nav > li.active a:hover,
 .navbar-default .navbar-nav > li.active a:focus,
 .navbar-default .navbar-nav > li.active a:active {
-  color: #4ecdc4;
+  color: #FECB2F;
   background-color: rgba(0, 0, 0, 0);
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #4ecdc4;
+  color: #FECB2F;
 }
 .page-header {
   background-image: url(../images/hero-img14.png);
@@ -623,7 +629,7 @@ h6 {
 }
 .page-breadcrumb {
   background-color: #f7f7f7;
-  background-color: #4ecdc4;
+  background-color: #FECB2F;
   color: #fff;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.01);
   border-botom: 1px solid #f2f2f2;
@@ -647,6 +653,8 @@ h6 {
   padding: 120px 0;
 }
 .about {
+  font-size: 16px;
+  font-weight: 200;
   padding: 100px 0 0;
 }
 .st-member {
@@ -694,7 +702,7 @@ h6 {
   display: block;
   height: 2px;
   width: 35px;
-  background-color: #4ecdc4;
+  background-color: #FECB2F;
   margin: 0 auto;
 }
 .st-member .st-member-info .st-member-pos {
@@ -842,7 +850,7 @@ h6 {
           animation-delay: 0.2s;
 }
 .progress-bar-sept {
-  background-color: #4ecdc4;
+  background-color: #FECB2F;
 }
 @-webkit-keyframes process {
   0% {
@@ -865,9 +873,9 @@ h6 {
   }
 }
 .funfacts {
-  background-image: url(../images/funfact4.png);
+  background-image: url(../images/funfact5.jpg);
   background-color: #000;
-  background-position: center center;
+  /* background-position: center center; */
   background-attachment: fixed;
   background-size: cover;
   padding: 100px 0;
@@ -897,7 +905,7 @@ h6 {
   display: block;
   width: 35px;
   height: 2px;
-  background-color: #4ecdc4;
+  background-color: #FECB2F;
   margin: 0 auto;
 }
 .service {
@@ -905,6 +913,11 @@ h6 {
 }
 .st-feature {
   text-align: center;
+
+}
+.st-feature p {
+  margin-bottom: 10px;
+  text-align: left;
 }
 .st-feature .st-feature-icon {
   width: 102px;
@@ -912,7 +925,7 @@ h6 {
   font-size: 42px;
   color: #fff;
   margin: 0 auto 20px;
-  background-color: #4ecdc4;
+  background-color: #FECB2F;
   border-radius: 50%;
   position: relative;
   -webkit-transform: rotate(0) scale(1);
@@ -932,8 +945,8 @@ h6 {
   margin-bottom: 10px;
 }
 .st-feature:hover .st-feature-icon {
-  color: #4ecdc4;
-  border-color: #4ecdc4;
+  color: #FECB2F;
+  border-color: #FECB2F;
   background-color: transparent;
   -webkit-transform: rotate(360deg) scale(1.8);
       -ms-transform: rotate(360deg) scale(1.8);
@@ -953,7 +966,7 @@ ul.styled-list li:before {
   display: inline-block;
   margin-left: -1.5em;
   width: 1.5em;
-  color: #4ecdc4;
+  color: #FECB2F;
 }
 ul.styled-list.list-caret li:before {
   content: '\f0da';
@@ -994,7 +1007,7 @@ ul.styled-list.list-star li:before {
   display: block;
   width: 80px;
   height: 1px;
-  background-color: #4ecdc4;
+  background-color: #FECB2F;
   margin: 15px auto 20px;
 }
 .c2a p {
@@ -1047,8 +1060,8 @@ ul.styled-list.list-star li:before {
   z-index: 1000;
   position: absolute;
   right: 50%;
-  bottom: 50px;
-  margin-right: -67px;
+  bottom: 30px;
+  margin-right: -75px;
   opacity: 0;
   -webkit-transform: translate3d(0, 60px, 0);
           transform: translate3d(0, 60px, 0);
@@ -1058,7 +1071,10 @@ ul.styled-list.list-star li:before {
 
 .grid figure h2 {
   color: #fff;
-  font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
   margin: 0;
   position: absolute;
   right: 30px;
@@ -1078,7 +1094,7 @@ ul.styled-list.list-star li:before {
   width: 80px;
   margin-left: -40px;
   height: 1px;
-  background: #4ecdc4;
+  background: #FECB2F;
   content: '';
   -webkit-transform: translate3d(0, 40px, 0);
           transform: translate3d(0, 40px, 0);
@@ -1168,7 +1184,7 @@ ul.styled-list.list-star li:before {
   width: 40px;
   height: 40px;
   border-radius: 40px;
-  background-color: #4ecdc4;
+  background-color: #FECB2F;
   position: absolute;
   bottom: 5%;
   left: 5%;
@@ -1190,11 +1206,13 @@ ul.styled-list.list-star li:before {
 }
 .testimonial blockquote p {
   font-style: italic;
+  font-size: 15px;
   font-weight: 300;
 }
 .testimonial blockquote footer,
 .testimonial blockquote small,
 .testimonial blockquote .small {
+  text-align: right;
   color: #fff;
 }
 .testimonials-carousel {
@@ -1260,7 +1278,7 @@ ul.styled-list.list-star li:before {
   color: #ff6666;
 }
 .pricing-table .pricing-body ul li .fa-check {
-  color: #4ecdc4;
+  color: #FECB2F;
 }
 .pricing-table .pricing-footer {
   text-align: center;
@@ -1272,13 +1290,13 @@ ul.styled-list.list-star li:before {
   overflow: hidden;
 }
 .pricing-table.featured .pricing-header .pt-price {
-  color: #4ecdc4;
+  color: #FECB2F;
 }
 .pricing-table.featured .pricing-header .pt-price small {
-  color: #4ecdc4;
+  color: #FECB2F;
 }
 .pricing-table.featured .pricing-header .pt-name {
-  color: #4ecdc4;
+  color: #FECB2F;
 }
 .pricing-table.featured .pricing-header .featured-text {
   font-family: "Oswald";
@@ -1288,7 +1306,7 @@ ul.styled-list.list-star li:before {
   font-weight: 300;
   text-transform: uppercase;
   text-align: center;
-  background-color: #4ecdc4;
+  background-color: #FECB2F;
   color: #fff;
   position: absolute;
   top: 22px;
@@ -1310,12 +1328,12 @@ ul.styled-list.list-star li:before {
   margin-bottom: 15px;
 }
 .faq h3 i {
-  color: #4ecdc4;
+  color: #FECB2F;
 }
 
 .call-us {
   padding: 50px 0;
-  background-color: #4ecdc4;
+  background-color: #FECB2F;
   text-align: center;
 }
 .call-us h3 {
@@ -1350,7 +1368,7 @@ ul.styled-list.list-star li:before {
   color: #4c4c4c;
 }
 .blog-post .post-meta a:hover {
-  color: #4ecdc4;
+  color: #FECB2F;
 }
 .blog-post .post-meta strong {
   color: #4c4c4c;
@@ -1421,7 +1439,7 @@ ul.styled-list.list-star li:before {
   color: #4c4c4c;
 }
 .widget ul li .recent-post .post-meta a:hover {
-  color: #4ecdc4;
+  color: #FECB2F;
 }
 .widget ul li .recent-post a {
   display: inline-block;
@@ -1438,7 +1456,7 @@ ul.styled-list.list-star li:before {
   vertical-align: middle;
   margin-top: 5px;
   text-indent: 0;
-  background-color: #4ecdc4;
+  background-color: #FECB2F;
   -webkit-transition: background-color 0.3s;
           transition: background-color 0.3s;
 }
@@ -1465,8 +1483,8 @@ ul.styled-list.list-star li:before {
           transition: color 0.3s, background-color 0.3s, border-color 0.3s;
 }
 .widget .tagcloud a:hover {
-  border-color: #4ecdc4;
-  background-color: #4ecdc4;
+  border-color: #FECB2F;
+  background-color: #FECB2F;
   color: #fff;
 }
 .subscribe {
@@ -1525,7 +1543,7 @@ a.social {
   font-family: "Oswald";
   letter-spacing: 1px;
   display: inline-block;
-  background-color: #4ecdc4;
+  background-color: #FECB2F;
   color: #fff;
   padding: 8px 20px 8px 65px;
   border-radius: 50px;
@@ -1612,7 +1630,7 @@ footer.site-footer a {
   color: #808080;
 }
 footer.site-footer a:hover {
-  color: #4ecdc4;
+  color: #FECB2F;
 }
 @media (min-width: 768px) {
   .navbar-nav > li > a {
@@ -1641,7 +1659,7 @@ footer.site-footer a:hover {
 }
 
 .tolist {
-  margin: 30px 10px 30px 10px;
+  margin: 60px 10px 120px 10px;
   text-align: center
 }
 
@@ -1656,12 +1674,18 @@ footer.site-footer a:hover {
 
 
 .search {
-  background-color: #4ecdc4;
+  /* background-image: url(../images/funfact5.jpg);
+  background-color: #000;
+  /* background-position: center center; */
+  /* background-attachment: fixed;
+  background-size: cover;
+  padding: 100px 0; */
+  background-color: #FECB2F;
 }
 
 .search h2 {
   text-align:center;
-  color: #fff;
+  color: white;
   font-size: 40px;
   font-weight: 800;
   text-transform: uppercase;
@@ -1674,7 +1698,7 @@ footer.site-footer a:hover {
   text-align:center;
   color:white;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 #imaginary_container{
@@ -1687,7 +1711,7 @@ footer.site-footer a:hover {
 .stylish-input-group .form-control{
 	border-right:0;
 	box-shadow:0 0 0;
-	border-color:#4ecdc4;
+	border-color:#FECB2F;
 }
 .stylish-input-group button{
     border:0;
@@ -1699,4 +1723,46 @@ footer.site-footer a:hover {
   color: #fff;
   text-align: center;
   margin-bottom: 35px;
+}
+
+
+.section-title-ex {
+  margin-bottom: 70px;
+}
+.section-title-ex h3 {
+  font-family: "Oswald";
+  text-transform: uppercase;
+  color: #4c4c4c;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 28px;
+  line-height: 48px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  clear: both;
+  position: relative;
+  padding: 0 10px;
+}
+.section-title-ex p {
+  font-family: "Oswald";
+  color: #FECB2F;
+  font-size: 38px;
+  line-height: 58px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.section-title-ex.st-center {
+  text-align: center;
+}
+.section-title-ex.st-center:before {
+  margin: auto;
+}
+
+.container .img {
+   text-align: right;
+   font-style: italic;
+   font-size: 13px;
+   color: #B9B9B9;
 }
