@@ -64,11 +64,11 @@
 				<div class="row">
 					<div class="col-md-12 no-padding ">
 						<div class="section-title st-center">
-							<h3>What we have done</h3>
-							<p>Avocent deditum long</p>
+							<h3>documentaries sorting</h3>
+							<p>By Categories</p>
 						</div>
 						<div class="filter mb40">
-							<form id="filter2">
+							<form id="filter">
 							<fieldset class="group">
 								<label class="btn btn-default btn-main"><input type="radio" name="filter" value="all" checked="checked">All</label>
 								<label class="btn btn-default"><input type="radio" name="filter" value="자연/생태">자연/생태</label>
@@ -111,7 +111,7 @@
 	 request.onload = function() {
 		 var getdata = request.response;
 		 getgrid(getdata);
-		 window.setTimeout(applyGrid, 50);
+		 // window.setTimeout(applyGrid, 50);
 	 }
 
 	 function getgrid(jsonObj) {
@@ -122,7 +122,6 @@
 			 var html = [];
 
 			 nTop.forEach(function(data) {
-
 				 html.push("<figure class='portfolio-item' data-groups=\'[\"" + data.big + "\"]\'>");
 				 html.push("<img src = \"photos/portfolio" + (data.id % 4 + 1) + ".jpg\" alt>");
 				 html.push("<figcaption>");
@@ -133,7 +132,6 @@
 				 html.push("<i class=\"fa fa-link\"></i>View more</a>");
 				 html.push("</figcaption>");
 				 html.push("</figure>");
-
 			 });
 
 			 var temphtml = html.join('');

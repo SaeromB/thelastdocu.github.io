@@ -472,7 +472,7 @@ h6 {
   background-size: cover;
   background-color: #000;
   padding: 100px 0;
-  position: relative
+  position: relative;
   /* Temp CSS */
   /* Temp CSS End */
 }
@@ -1680,7 +1680,8 @@ footer.site-footer a:hover {
   /* background-attachment: fixed;
   background-size: cover;
   padding: 100px 0; */
-  background-color: #FECB2F;
+  /* background-color: #FECB2F; */
+  background:transparent;
 }
 
 .search h2 {
@@ -1701,9 +1702,15 @@ footer.site-footer a:hover {
   font-weight: 600;
 }
 
+.search .col-md-12 {
+  background-color: #FECB2F;
+  margin-top:15%;
+
+}
+
 #imaginary_container{
     margin-top:10%; /* Don't copy this */
-    margin-bottom:10%
+    margin-bottom:10%;
 }
 .stylish-input-group .input-group-addon{
     background: white !important;

@@ -64,11 +64,11 @@
 				<div class="row">
 					<div class="col-md-12 no-padding ">
 						<div class="section-title st-center">
-							<h3>What we have done</h3>
-							<p>Avocent deditum long</p>
+							<h3>documentaries sorting</h3>
+							<p>By Company</p>
 						</div>
 						<div class="filter mb40">
-							<form id="filter1">
+							<form id="filter">
 							<fieldset class="group">
 								<label class="btn btn-default btn-main"><input type="radio" name="filter" value="all" checked="checked">All</label>
 								<label class="btn btn-default"><input type="radio" name="filter" value="KBS">KBS 스페셜</label>
@@ -101,7 +101,7 @@
 	 request.onload = function() {
 		 var getdata = request.response;
 		 getgrid(getdata);
-		 window.setTimeout(applyGrid, 50);
+		 window.setTimeout(applyGrid, 100);
 	 }
 
 	 function getgrid(jsonObj) {
@@ -112,7 +112,6 @@
 			 var html = [];
 
 			 nTop.forEach(function(data) {
-
 				 html.push("<figure class='portfolio-item' data-groups=\'[\"" + data.tv + "\"]\'>");
 				 html.push("<img src = \"photos/portfolio" + (data.id % 4 + 1) + ".jpg\" alt>");
 				 html.push("<figcaption>");

@@ -125,7 +125,7 @@
                page *= 1;
 
 
-            	 var requestURL = 'https://jyeeee95.github.io/finalfinalfinal.json';
+            	 var requestURL = 'https://jyeeee95.github.io/test_for_finaldata.json';
             	 var request = new XMLHttpRequest();
             	 request.open('GET', requestURL);
 
@@ -138,6 +138,7 @@
             		 // window.setTimeout(applyGrid, 50);
                  gettitlename(getdata);
              		 gettag(getdata);
+                 getgrid(getdata);
             	 }
 
 
@@ -188,47 +189,31 @@
 
              	 } //end of gettag function
 
-
-               var requestURL_reco = 'https://jyeeee95.github.io/recommendation_result.json';
-            	 var request_reco = new XMLHttpRequest();
-            	 request_reco.open('GET', requestURL_reco);
-
-            	 request_reco.responseType = 'json';
-            	 request_reco.send();
-
-            	 request_reco.onload = function() {
-            		 var recodata = request_reco.response;
-            		 getgrid(recodata);
-            		 window.setTimeout(applyGrid, 50);
-            	 }
-
              	 function getgrid(jsonObj) {
-                   // alert(jsonObj);
-                   var forreco = jsonObj[page];
+                   var getdata = jsonObj[page];
+                   var reco_list = getdata.reco;
 
-                   var recoarray = forreco.reco.replace("[", "").replace("]","").replace(/'/g, "").replace(/ /g,"");
-                   var reco_list = keyarray.split(',');
+                   var section = document.querySelector('.grid');
+                   var html = [];
 
-             		   var n = reco_list.length;
-             		   var section = document.querySelector('.grid');
-                   var nTop = jsonObj.slice(0, n);
+                   var reco_array = reco_list.replace("[", "").replace("]","").replace(/ /g,"");
+                   var recommendation = reco_array.split(',');
 
-             			 var html = [];
+                   for (i = 0; i < 6; i++){
+                     var reco_id = recommendation[i];
 
-             			 nTop.forEach(function(data) {
-
-             				 html.push("<figure class='portfolio-item' data-groups=\'[\"" + getdata.tv + "\"]\'>");
-             				 html.push("<img src = \"photos/portfolio" + (getdata.id % 4 + 1) + ".jpg\" alt>");
+             				 html.push("<figure class='portfolio-item' data-groups=\'[\"" + jsonObj[reco_id].tv + "\"]\'>");
+             				 html.push("<img src = \"photos/portfolio" + (jsonObj[reco_id].id % 4 + 1) + ".jpg\" alt>");
              				 html.push("<figcaption>");
-             				 html.push("<h2>" + getdata.epi + "</h2>");
-             				 html.push("<p><span> " + getdata.title + "</span> with "+ getdata.tv + "</p>");
-             				 var connecturl = "page.html?page=" + (getdata.id - 1);
+             				 html.push("<h2>" + jsonObj[reco_id].epi + "</h2>");
+             				 html.push("<p><span> " + jsonObj[reco_id].title + "</span> with "+ jsonObj[reco_id].tv + "</p>");
+             				 var connecturl = "page.html?page=" + (jsonObj[reco_id].id - 1);
              				 html.push("<a href=" + connecturl + " class=\"btn btn-main\">");
              				 html.push("<i class=\"fa fa-link\"></i>View more</a>");
              				 html.push("</figcaption>");
              				 html.push("</figure>");
+                   }
 
-             			 });
 
              			 var temphtml = html.join('');
              			 temphtml.replace(/>,</gi, /> </);
