@@ -130,7 +130,7 @@
               page *= 1;
 
 
-              var requestURL = 'https://jyeeee95.github.io/macngrams_json_181005.json';
+              var requestURL = 'https://jyeeee95.github.io/macngrams_docu.json';
               var request = new XMLHttpRequest();
               request.open('GET', requestURL);
 
@@ -227,8 +227,7 @@
          						html.push("<article>");
 
          						html.push("<figure >");
-
-                    var connecturl = "page.html?page=" + (jsonObj[reco_id].id - 1);
+                    var connecturl = "page.html?page=" + (jsonObj[reco_id].id);
         						html.push("<a href=" + connecturl + ">");
          						html.push("<h2>" + jsonObj[reco_id].epi.substring(0,15) + "...</h2>");
          						html.push("<p>" + jsonObj[reco_id].title + "</p></a>")
