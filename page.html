@@ -19,6 +19,7 @@
             <link href="css/owl.transitions.css" rel="stylesheet">
 
             <link href="css/style_list_by_tag.css" rel="stylesheet">
+            <link href="css/style-temp.css" rel="stylesheet">
 
 
 
@@ -72,6 +73,9 @@
 
                     <div class='section-title st-center'>
                     </div>
+
+                    <div class = "medal" style="text-align:center; margin-bottom:40px;">
+                    </div>
                   </div>
                   </div>
 
@@ -87,8 +91,10 @@
                         <div class="Recommend">
                         <h3><i class="fa fa-question-circle"></i> Recommended Docu </h3>
 
-                        <div class="grid">
-          							</div>
+                        <!-- <div class="wrapper"> -->
+                        <section class="newgrid">
+                        </section>
+          							<!-- </div> -->
 
                         </div>
 
@@ -102,52 +108,51 @@
               <!-- function test -->
               <script type="text/javascript">
 
-             	 // get keyword
-             	 function getUrlParams() {
-             			 var params = {};
-             			 var uri_dec = decodeURIComponent(window.location.search);
+              function getUrlParams() {
+                  var params = {};
+                  var uri_dec = decodeURIComponent(window.location.search);
 
-             			 uri_dec.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
-             			 return params;
-             	 } //end of geturlParams function
+                  uri_dec.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
+                  return params;
+              } //end of geturlParams function
 
-             	 function getpagenum(){
-             		 var oParams = getUrlParams();
-             		 var page = oParams.page;
+              function getpagenum(){
+                var oParams = getUrlParams();
+                var page = oParams.page;
 
-             		 return page;
-             	 } //end of getkeyword function
-
-
-             	 // get grid section
-             	 var page = getpagenum();
-               page.replace(/'/g, "");
-               page *= 1;
+                return page;
+              } //end of getkeyword function
 
 
-            	 var requestURL = 'https://jyeeee95.github.io/test_for_finaldata.json';
-            	 var request = new XMLHttpRequest();
-            	 request.open('GET', requestURL);
+              // get grid section
+              var page = getpagenum();
+              page.replace(/'/g, "");
+              page *= 1;
 
-            	 request.responseType = 'json';
-            	 request.send();
 
-            	 request.onload = function() {
-            		 getdata = request.response;
-            		 // getgrid(getdata);
-            		 // window.setTimeout(applyGrid, 50);
-                 gettitlename(getdata);
-             		 gettag(getdata);
-                 getgrid(getdata);
-            	 }
+              var requestURL = 'https://jyeeee95.github.io/macngrams_json_181005.json';
+              var request = new XMLHttpRequest();
+              request.open('GET', requestURL);
 
+              request.responseType = 'json';
+              request.send();
+
+              request.onload = function() {
+                getdata = request.response;
+                getgrid(getdata);
+                window.setTimeout(applyGrid, 50);
+                gettitlename(getdata);
+                gettag(getdata);
+                getaward(getdata);
+                // getgrid(getdata);
+              }
 
              	 function gettitlename(jsonObj) {
                  var html = [];
                  var section = document.querySelector('section.faq-sec .section-title');
                  var pageset = jsonObj[page];
 
-                 html.push("<h3>" + pageset.title + " / " + pageset.dates +"</h3></p>");
+                 html.push("<h3>" + pageset.tv + " / "+ pageset.title + " / " + pageset.dates +"</h3>");
                  html.push("<p>" + pageset.epi + "</p>")
                  html.push("<a href = \"" + pageset.links + "\" class = \"btn btn-main btn-lg\">바로가기</a>");
 
@@ -159,7 +164,7 @@
 
 
                function gettag(jsonObj) {
-                 var pageset = jsonObj[page]
+                 var pageset = jsonObj[page];
                  var section = document.querySelector('section.faq-sec .hashtag');
 
                  var keyarray = pageset.vod_key.replace("[", "").replace("]","").replace(/'/g, "").replace(/ /g,"");
@@ -189,37 +194,56 @@
 
              	 } //end of gettag function
 
-             	 function getgrid(jsonObj) {
-                   var getdata = jsonObj[page];
-                   var reco_list = getdata.reco;
+               function getaward(jsonObj) {
+                 var pageset = jsonObj[page];
+                 var section = document.querySelector('section.faq-sec .medal');
+                 var html = [];
 
-                   var section = document.querySelector('.grid');
-                   var html = [];
+                 if (pageset.awards != 0) {
+                   html.push("<img src=\"images/winner.png\">");
+                   html.push("<h5>이 다큐멘터리는 무슨 수상을 한 작품입니다.</h5>");
 
-                   var reco_array = reco_list.replace("[", "").replace("]","").replace(/ /g,"");
-                   var recommendation = reco_array.split(',');
+                   var temphtml = html.join('');
+            			 temphtml.replace(/>,</gi, /> </);
 
-                   for (i = 0; i < 6; i++){
-                     var reco_id = recommendation[i];
-
-             				 html.push("<figure class='portfolio-item' data-groups=\'[\"" + jsonObj[reco_id].tv + "\"]\'>");
-             				 html.push("<img src = \"photos/portfolio" + (jsonObj[reco_id].id % 4 + 1) + ".jpg\" alt>");
-             				 html.push("<figcaption>");
-             				 html.push("<h2>" + jsonObj[reco_id].epi + "</h2>");
-             				 html.push("<p><span> " + jsonObj[reco_id].title + "</span> with "+ jsonObj[reco_id].tv + "</p>");
-             				 var connecturl = "page.html?page=" + (jsonObj[reco_id].id - 1);
-             				 html.push("<a href=" + connecturl + " class=\"btn btn-main\">");
-             				 html.push("<i class=\"fa fa-link\"></i>View more</a>");
-             				 html.push("</figcaption>");
-             				 html.push("</figure>");
-                   }
+            			 section.innerHTML = temphtml;
+                 }
+               }
 
 
-             			 var temphtml = html.join('');
-             			 temphtml.replace(/>,</gi, /> </);
+               function getgrid(jsonObj) {
+         					var getdata = jsonObj[page];
+         					var reco_list = getdata.reco;
 
-             			 section.innerHTML = temphtml;
-             		 }
+         					var section = document.querySelector('section .newgrid');
+         					var html = [];
+
+         					var reco_array = reco_list.replace("[", "").replace("]","").replace(/ /g,"");
+         					var recommendation = reco_array.split(',');
+
+         					for (i = 0; i < 5; i++){
+         						var reco_id = recommendation[i];
+
+         						html.push("<article>");
+
+         						html.push("<figure >");
+
+                    var connecturl = "page.html?page=" + (jsonObj[reco_id].id - 1);
+        						html.push("<a href=" + connecturl + ">");
+         						html.push("<h2>" + jsonObj[reco_id].epi.substring(0,15) + "...</h2>");
+         						html.push("<p>" + jsonObj[reco_id].title + "</p></a>")
+         						html.push("</figure>");
+
+         						html.push("<img src = " + jsonObj[reco_id].image + " alt>");
+         						html.push("</article>");
+         					}
+
+
+         					var temphtml = html.join('');
+         					temphtml.replace(/>,</gi, /> </);
+
+         					section.innerHTML = temphtml;
+         				}
 
 
 

@@ -1036,7 +1036,8 @@ ul.styled-list.list-star li:before {
   background: #000;
   text-align: center;
   cursor: pointer;
-  width: 33.33333333%;
+  width: 33.33333333vw;
+  height: 20vw;
   box-sizing: border-box;
 }
 .grid figure img {

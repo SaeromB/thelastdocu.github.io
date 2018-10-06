@@ -91,7 +91,7 @@
  <!-- function test -->
  <script type="text/javascript">
 
-	 var requestURL = 'https://jyeeee95.github.io/finalfinalfinal.json';
+	 var requestURL = 'https://jyeeee95.github.io/macngrams_json_181005.json';
 	 var request = new XMLHttpRequest();
 	 request.open('GET', requestURL);
 
@@ -113,7 +113,7 @@
 
 			 nTop.forEach(function(data) {
 				 html.push("<figure class='portfolio-item' data-groups=\'[\"" + data.tv + "\"]\'>");
-				 html.push("<img src = \"photos/portfolio" + (data.id % 4 + 1) + ".jpg\" alt>");
+				 html.push("<img src = " + data.image + " alt>");
 				 html.push("<figcaption>");
 				 html.push("<h2>" + data.epi + "</h2>");
 				 html.push("<p><span> " + data.title + "</span> with "+ data.tv + "</p>");
@@ -155,7 +155,7 @@
    <script src="js/jquery.easing.min.js"></script>
    <script src="js/jquery.stellar.js"></script>
    <script src="js/jquery.appear.js"></script>
-   <script src="js/jquery.nicescroll.min.js"></script>
+   <!-- <script src="js/jquery.nicescroll.min.js"></script> -->
    <script src="js/jquery.countTo.js"></script>
    <script src="js/jquery.shuffle.modernizr.js"></script>
    <script src="js/jquery.shuffle.js"></script>
