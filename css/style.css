@@ -1675,14 +1675,19 @@ footer.site-footer a:hover {
 
 
 .search {
-  /* background-image: url(../images/funfact5.jpg);
-  background-color: #000;
   /* background-position: center center; */
   /* background-attachment: fixed;
   background-size: cover;
   padding: 100px 0; */
   /* background-color: #FECB2F; */
   background:transparent;
+
+}
+
+.search .row {
+  background-color: #FECB2F;
+  background-position: center center;
+  text-align: center;
 }
 
 .search h2 {
@@ -1704,8 +1709,6 @@ footer.site-footer a:hover {
 }
 
 .search .col-md-12 {
-  background-color: #FECB2F;
-  margin-top:15%;
 
 }
 

@@ -24,8 +24,8 @@ aritcle *, aritcle *:after, aritcle *:before {box-sizing: inherit;}
 	hyphens: auto;
 }
 .newgrid {
-  margin: calc(var(--size) * .5) auto 0;
-  width: calc(var(--size) * calc(var(--Nhexa) - 1));
+  margin: calc(var(--size) * .8) auto 0;
+  width: calc(var(--size) * calc(var(--Nhexa) - .5));
 	display: grid;
 	grid-template-columns: repeat(var(--Nhexa), 1fr);
 	grid-gap: var(--gap);
@@ -62,7 +62,10 @@ aritcle *, aritcle *:after, aritcle *:before {box-sizing: inherit;}
 	z-index:  10;
 }
 .newgrid article:hover img {transform: translate(-50%, -50%) rotate(-110deg);}
-.newgrid h2 {font-size: 100%;}
+.newgrid h2 {
+	font-size: 100%;
+	font-weight: 600;
+}
 .newgrid figure {
 	display: flex;
 	flex-direction: column;
@@ -80,6 +83,8 @@ aritcle *, aritcle *:after, aritcle *:before {box-sizing: inherit;}
 	font-size: 70%;
 	line-height: 1.2;
 	width: 100%;
+	color: white;
+	font-weight: 600;
 }
 .newgrid h1 {
 	width: 100vw;

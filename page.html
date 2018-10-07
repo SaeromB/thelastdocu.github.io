@@ -100,12 +100,12 @@
                         <div class="Recommend">
                         <h3><i class="fa fa-question-circle"></i> Recommended Docu </h3>
 
-                        <!-- <div class="wrapper"> -->
+
                         <section class="newgrid">
                         </section>
-          							<!-- </div> -->
+          							</div>
 
-                        </div>
+
 
 
                       </div>
@@ -230,7 +230,7 @@
          					var reco_array = reco_list.replace("[", "").replace("]","").replace(/ /g,"");
          					var recommendation = reco_array.split(',');
 
-         					for (i = 0; i < 5; i++){
+         					for (i = 0; i < 6; i++){
          						var reco_id = recommendation[i];
                     reco_id *= 1;
                     reco_id -= 1;
@@ -240,7 +240,7 @@
          						html.push("<figure >");
                     var connecturl = "/page.html?page=" + (jsonObj[reco_id].id - 1);
         						html.push("<a href=" + connecturl + ">");
-         						html.push("<h2>" + jsonObj[reco_id].epi.substring(0,15) + "...</h2>");
+         						html.push("<h2>" + jsonObj[reco_id].epi.substring(0,16) + "...</h2>");
          						html.push("<p>" + jsonObj[reco_id].title + "</p></a>")
          						html.push("</figure>");
 
