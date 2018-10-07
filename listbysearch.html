@@ -18,6 +18,15 @@
 
 		<link href="css/style_list_by_tag.css" rel="stylesheet">
 
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127041622-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-127041622-1');
+		</script>
 
 
 
@@ -166,7 +175,7 @@
 						 html.push("<figcaption>");
 						 html.push("<h2>" + griddata.epi + "</h2>");
 						 html.push("<p><span> " + griddata.title + "</span> with "+ griddata.tv + "</p>");
-						 var connecturl = "page.html?page=" + (griddata.id - 1);
+						 var connecturl = "page.html?page=" + griddata.id;
 						 html.push("<a href=" + connecturl + " class=\"btn btn-main\">");
 						 html.push("<i class=\"fa fa-link\"></i>View more</a>");
 						 html.push("</figcaption>");

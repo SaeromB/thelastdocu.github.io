@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +18,16 @@
 		<link href="css/owl.transitions.css" rel="stylesheet">
 
 		<link href="css/style.css" rel="stylesheet">
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127041622-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-127041622-1');
+		</script>
 
 
 
@@ -441,7 +452,7 @@
 					 html.push("<figcaption>");
 					 html.push("<h2>" + data.epi + "</h2>");
 					 html.push("<p><span> " + data.title + "</span> with "+ data.tv + "</p>");
-					 var connecturl = "page.html?page=" + (data.id - 1);
+					 var connecturl = "page.html?page=" + data.id;
 					 html.push("<a href=" + connecturl + " class=\"btn btn-main\">");
 					 html.push("<i class=\"fa fa-link\"></i>View more</a>");
 					 html.push("</figcaption>");

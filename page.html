@@ -21,6 +21,15 @@
             <link href="css/style_list_by_tag.css" rel="stylesheet">
             <link href="css/style-temp.css" rel="stylesheet">
 
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127041622-1"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-127041622-1');
+            </script>
 
 
 
@@ -140,7 +149,7 @@
               request.onload = function() {
                 getdata = request.response;
                 getgrid(getdata);
-                window.setTimeout(applyGrid, 50);
+                // window.setTimeout(applyGrid, 50);
                 gettitlename(getdata);
                 gettag(getdata);
                 getaward(getdata);
@@ -150,7 +159,7 @@
              	 function gettitlename(jsonObj) {
                  var html = [];
                  var section = document.querySelector('section.faq-sec .section-title');
-                 var pageset = jsonObj[page];
+                 var pageset = jsonObj[(page-1)];
 
                  html.push("<h3>" + pageset.tv + " / "+ pageset.title + " / " + pageset.dates +"</h3>");
                  html.push("<p>" + pageset.epi + "</p>")
@@ -164,7 +173,7 @@
 
 
                function gettag(jsonObj) {
-                 var pageset = jsonObj[page];
+                 var pageset = jsonObj[(page-1)];
                  var section = document.querySelector('section.faq-sec .hashtag');
 
                  var keyarray = pageset.vod_key.replace("[", "").replace("]","").replace(/'/g, "").replace(/ /g,"");
@@ -195,7 +204,7 @@
              	 } //end of gettag function
 
                function getaward(jsonObj) {
-                 var pageset = jsonObj[page];
+                 var pageset = jsonObj[(page-1)];
                  var section = document.querySelector('section.faq-sec .medal');
                  var html = [];
 
@@ -212,7 +221,7 @@
 
 
                function getgrid(jsonObj) {
-         					var getdata = jsonObj[page];
+         					var getdata = jsonObj[(page-1)];
          					var reco_list = getdata.reco;
 
          					var section = document.querySelector('section .newgrid');
@@ -223,11 +232,13 @@
 
          					for (i = 0; i < 5; i++){
          						var reco_id = recommendation[i];
+                    reco_id *= 1;
+                    reco_id -= 1;
 
          						html.push("<article>");
 
          						html.push("<figure >");
-                    var connecturl = "page.html?page=" + (jsonObj[reco_id].id);
+                    var connecturl = "/page.html?page=" + (jsonObj[reco_id].id);
         						html.push("<a href=" + connecturl + ">");
          						html.push("<h2>" + jsonObj[reco_id].epi.substring(0,15) + "...</h2>");
          						html.push("<p>" + jsonObj[reco_id].title + "</p></a>")

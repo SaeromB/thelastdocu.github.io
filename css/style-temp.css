@@ -50,7 +50,6 @@ aritcle *, aritcle *:after, aritcle *:before {box-sizing: inherit;}
 	shape-outside: polygon(0% 0%, 100% 0%, 0% 50%, 100% 100%, 0% 100%);
 }
 .newgrid img {
-  width: var(--size);
 	height: var(--size);
 	position: absolute;
 	top: 50%;
