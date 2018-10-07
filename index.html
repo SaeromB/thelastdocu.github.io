@@ -425,7 +425,6 @@
 	 		 getgrid(getdata);
 			 setgridstyle()
 			 window.setTimeout(applyGrid, 100);
-			 // window.setTimeout(setgridstyle, 150);
 	 	 } // end onload
 
 		 function setgridstyle(){
@@ -452,7 +451,7 @@
 					 html.push("<figcaption>");
 					 html.push("<h2>" + data.epi + "</h2>");
 					 html.push("<p><span> " + data.title + "</span> with "+ data.tv + "</p>");
-					 var connecturl = "page.html?page=" + data.id;
+					 var connecturl = "page.html?page=" + (data.id - 1);
 					 html.push("<a href=" + connecturl + " class=\"btn btn-main\">");
 					 html.push("<i class=\"fa fa-link\"></i>View more</a>");
 					 html.push("</figcaption>");

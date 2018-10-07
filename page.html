@@ -159,7 +159,7 @@
              	 function gettitlename(jsonObj) {
                  var html = [];
                  var section = document.querySelector('section.faq-sec .section-title');
-                 var pageset = jsonObj[(page-1)];
+                 var pageset = jsonObj[page];
 
                  html.push("<h3>" + pageset.tv + " / "+ pageset.title + " / " + pageset.dates +"</h3>");
                  html.push("<p>" + pageset.epi + "</p>")
@@ -173,7 +173,7 @@
 
 
                function gettag(jsonObj) {
-                 var pageset = jsonObj[(page-1)];
+                 var pageset = jsonObj[page];
                  var section = document.querySelector('section.faq-sec .hashtag');
 
                  var keyarray = pageset.vod_key.replace("[", "").replace("]","").replace(/'/g, "").replace(/ /g,"");
@@ -204,7 +204,7 @@
              	 } //end of gettag function
 
                function getaward(jsonObj) {
-                 var pageset = jsonObj[(page-1)];
+                 var pageset = jsonObj[page];
                  var section = document.querySelector('section.faq-sec .medal');
                  var html = [];
 
@@ -221,7 +221,7 @@
 
 
                function getgrid(jsonObj) {
-         					var getdata = jsonObj[(page-1)];
+         					var getdata = jsonObj[page];
          					var reco_list = getdata.reco;
 
          					var section = document.querySelector('section .newgrid');
@@ -238,7 +238,7 @@
          						html.push("<article>");
 
          						html.push("<figure >");
-                    var connecturl = "/page.html?page=" + (jsonObj[reco_id].id);
+                    var connecturl = "/page.html?page=" + (jsonObj[reco_id].id - 1);
         						html.push("<a href=" + connecturl + ">");
          						html.push("<h2>" + jsonObj[reco_id].epi.substring(0,15) + "...</h2>");
          						html.push("<p>" + jsonObj[reco_id].title + "</p></a>")

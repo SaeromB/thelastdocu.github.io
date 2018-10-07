@@ -175,7 +175,7 @@
 						 html.push("<figcaption>");
 						 html.push("<h2>" + griddata.epi + "</h2>");
 						 html.push("<p><span> " + griddata.title + "</span> with "+ griddata.tv + "</p>");
-						 var connecturl = "page.html?page=" + griddata.id;
+						 var connecturl = "page.html?page=" + (griddata.id - 1);
 						 html.push("<a href=" + connecturl + " class=\"btn btn-main\">");
 						 html.push("<i class=\"fa fa-link\"></i>View more</a>");
 						 html.push("</figcaption>");
