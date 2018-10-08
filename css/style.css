@@ -1016,6 +1016,10 @@ ul.styled-list.list-star li:before {
 .portfolio {
   padding: 100px 0 0;
 }
+.portfolio h5 {
+  margin-top: 50px;
+  color: #999999;
+}
 .filter {
   text-align: center;
 }
@@ -1334,14 +1338,14 @@ ul.styled-list.list-star li:before {
 
 .call-us {
   padding: 50px 0;
-  background-color: #FECB2F;
+  /* background-color: #FECB2F; */
   text-align: center;
 }
 .call-us h3 {
   display: inline-block;
   *display: inline;
   *zoom: 1;
-  color: #fff;
+  color: #FECB2F;
   text-transform: uppercase;
   font-size: 30px;
   line-height: 45px;
@@ -1702,10 +1706,19 @@ footer.site-footer a:hover {
 }
 
 .search p {
+  margin-top: 40px;
+  margin-bottom: 10px;
   text-align:center;
   color:white;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
+}
+
+.search h5 {
+  text-align:center;
+  color:white;
+  font-size: 16px;
+  margin-bottom: 40px;
 }
 
 .search .col-md-12 {
@@ -1776,4 +1789,45 @@ footer.site-footer a:hover {
    font-style: italic;
    font-size: 13px;
    color: #B9B9B9;
+}
+
+/* Icons */
+.social ul {
+    padding: 0;
+	list-style: none;
+	margin: 30px auto;
+}
+.social ul li {
+    display: inline-block;
+	margin: 0 15px 0 15px;
+}
+.social ul li a {
+    padding: 1.3rem;
+    background-color: #FECB2F;
+    border-radius: 50%;
+    text-align: center center;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    display: inline-block;
+    line-height:0px;
+}
+.social ul li a i {
+    color: white;
+	-webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition:  0.5s;
+}
+.social ul li a:hover i {
+	-webkit-transform: rotateZ(360deg);
+	-moz-transform: rotateZ(360deg);
+	transform: rotateZ(360deg);
+  color: #FECB2F;
+}
+.social ul li:hover a {
+	background-color: white;
+}
+
+.social p {
+  margin-top: 20px;
 }
